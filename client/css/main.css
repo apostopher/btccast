@@ -1,0 +1,21 @@
+body {
+  font-family: "proxima-nova-soft";
+  background: black;
+}
+
+.price-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px;
+}
+
+.price {
+  font-weight: 300;
+  text-align: center;
+  color: #e24b02;
+  font-size: 50px;
+}
