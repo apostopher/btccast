@@ -19,6 +19,9 @@
 
     //Implementation ---
     function handleMessage(price){
+      if (vm.price === price){
+        return;
+      }
       $scope.$apply(function() {
         vm.price = price;
       });
