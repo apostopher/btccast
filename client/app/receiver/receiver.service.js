@@ -41,7 +41,7 @@
     }
 
     function setupMessageBus(){
-      aposMessageBus = castReceiverManager.getCastMessageBus(CAST_NS, cast.receiver.CastMessageBus.MessageType.STRING);
+      aposMessageBus = castReceiverManager.getCastMessageBus(CAST_NS, cast.receiver.CastMessageBus.MessageType.JSON);
       aposMessageBus.onMessage = handleMessage;
     }
 
