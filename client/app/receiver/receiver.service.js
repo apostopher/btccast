@@ -41,12 +41,12 @@
     }
 
     function setupMessageBus(){
-      aposMessageBus = castReceiverManager.getCastMessageBus(CAST_NS);
+      aposMessageBus = castReceiverManager.getCastMessageBus(CAST_NS, cast.receiver.CastMessageBus.MessageType.JSON);
       aposMessageBus.onMessage = handleMessage;
     }
 
     function handleMessage(event){
-      notifyCallback(event.data);
+      notifyCallback(event.data.message);
     }
 
     function init(){
