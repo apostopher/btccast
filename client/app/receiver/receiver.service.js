@@ -46,7 +46,7 @@
     }
 
     function handleMessage(event){
-
+      notifyCallback(event.data);
     }
 
     function init(){
