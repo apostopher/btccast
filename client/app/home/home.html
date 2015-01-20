@@ -1,3 +1,4 @@
 <div class="price-holder">
+  <h2 class="price" ng-hide="home.isAvailable()">Loading price&hellip;</h2>
   <h2 class="price" ng-bind="home.price | currency"></h2>
 </div>

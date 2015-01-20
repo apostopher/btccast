@@ -13,13 +13,17 @@
   /* @ngInject */
   function HomeCtrl($scope, pusherService) {
     var vm = this;
-    vm.price = 'loading price...';
-    
+    vm.isAvailable = isAvailable;
+
     pusherService.on(handleMessage);
 
     return vm;
 
     //Implementation ---
+    function isAvailable(){
+      return (vm.price !== void 0);
+    }
+
     function handleMessage(price){
       if (vm.price === price){
         return;
