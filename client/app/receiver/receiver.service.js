@@ -16,13 +16,18 @@
     // closure variables
     var castReceiverManager;
     var aposMessageBus;
+    var notifyCallback;
 
     return {
-      init: init,
-      start: start
+      start: start,
+      on: registerCallback
     };
 
     // Implementation ---
+    function registerCallback(callback){
+      notifyCallback = callback;
+    }
+
     function attachEventHandlers(){
       castReceiverManager.onSenderDisconnected = onSenderDisconnected;
     }
@@ -46,6 +51,8 @@
 
     function init(){
       castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+      setupMessageBus();
+      attachEventHandlers();
     }
 
     function getConfig(){
@@ -58,6 +65,7 @@
     }
 
     function start(){
+      init();
       castReceiverManager.start(getConfig());
     }
   }

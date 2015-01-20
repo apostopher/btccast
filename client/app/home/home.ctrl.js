@@ -8,25 +8,31 @@
     .module('btcapp.home')
     .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject = ['$scope', 'pusherService'];
+  HomeCtrl.$inject = ['$scope', 'pusherService', 'receiverService'];
 
   /* @ngInject */
-  function HomeCtrl($scope, pusherService) {
+  function HomeCtrl($scope, pusherService, receiverService) {
     var vm = this;
     vm.price = void 0;
     vm.isAvailable = isAvailable;
 
-    pusherService.on(handleMessage);
+    pusherService.on(handleSenderMessage);
+    receiverService.on(handlePushMessage);
+    receiverService.start();
 
     return vm;
 
     //Implementation ---
+    function handleSenderMessage(message){
+
+    }
+
     function isAvailable(){
       console.log(vm.price);
       return (vm.price !== void 0);
     }
 
-    function handleMessage(price){
+    function handlePushMessage(price){
       if (vm.price === price){
         return;
       }
