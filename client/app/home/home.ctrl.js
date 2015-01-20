@@ -14,7 +14,6 @@
   function HomeCtrl($scope, pusherService, receiverService) {
     var vm = this;
     vm.price = void 0;
-    vm.isAvailable = isAvailable;
 
     pusherService.on(handlePushMessage);
     receiverService.on(handleSenderMessage);
@@ -30,10 +29,6 @@
       $scope.$apply(function() {
         vm.senderMessage = message;
       });
-    }
-
-    function isAvailable(){
-      return (vm.price !== void 0);
     }
 
     function handlePushMessage(price){

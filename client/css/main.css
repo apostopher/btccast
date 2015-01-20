@@ -17,17 +17,8 @@ body {
   font-weight: 300;
   line-height: 200px;
   text-align: center;
-  /*color: #e24b02;*/
-  color: #FF69B4;
-  font-size: 50px;
-}
-
-.message {
-  font-weight: 300;
-  text-align: center;
   color: #e24b02;
-  font-size: 30px;
-  line-height: 200px;
+  font-size: 50px;
 }
 
 .btc-footer {
@@ -43,7 +34,7 @@ body {
 .sender-message {
   line-height: 24px;
   font-size: 20px;
-  color: #e24b02;
+  color: #f2f2f2;;
   text-align: center;
   display: block;
 }
