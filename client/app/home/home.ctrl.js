@@ -24,11 +24,15 @@
 
     //Implementation ---
     function handleSenderMessage(message){
-
+      if (vm.senderMessage === message){
+        return;
+      }
+      $scope.$apply(function() {
+        vm.senderMessage = message;
+      });
     }
 
     function isAvailable(){
-      console.log(vm.price);
       return (vm.price !== void 0);
     }
 
