@@ -1,8 +1,7 @@
 <div class="price-holder">
-  <h3 class="message" ng-hide="home.price">Loading price&hellip;</h3>
-  <h2 class="price" ng-bind="home.price | currency"></h2>
+  <h2 class="price" ng-bind="home.senderMessage"></h2>
 </div>
 
 <div class="btc-footer">
-  <p class="sender-message" ng-bind="home.senderMessage"></p>
+  <p class="sender-message" ng-bind="home.price | currency"></p>
 </div>
