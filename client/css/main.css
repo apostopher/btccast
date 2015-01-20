@@ -15,6 +15,7 @@ body {
 
 .price {
   font-weight: 300;
+  line-height: 200px;
   text-align: center;
   color: #e24b02;
   font-size: 50px;
@@ -25,4 +26,5 @@ body {
   text-align: center;
   color: #e24b02;
   font-size: 30px;
+  line-height: 200px;
 }
