@@ -16,8 +16,8 @@
     vm.price = void 0;
     vm.isAvailable = isAvailable;
 
-    pusherService.on(handleSenderMessage);
-    receiverService.on(handlePushMessage);
+    pusherService.on(handlePushMessage);
+    receiverService.on(handleSenderMessage);
     receiverService.start();
 
     return vm;
