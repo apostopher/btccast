@@ -17,7 +17,8 @@ body {
   font-weight: 300;
   line-height: 200px;
   text-align: center;
-  color: #e24b02;
+  /*color: #e24b02;*/
+  color: #FF69B4;
   font-size: 50px;
 }
 
@@ -41,8 +42,8 @@ body {
 
 .sender-message {
   line-height: 24px;
-  font-size: 18px;
-  color: white;
+  font-size: 20px;
+  color: #e24b02;
   text-align: center;
   display: block;
 }
