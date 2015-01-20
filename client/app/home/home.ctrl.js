@@ -13,6 +13,7 @@
   /* @ngInject */
   function HomeCtrl($scope, pusherService) {
     var vm = this;
+    vm.price = void 0;
     vm.isAvailable = isAvailable;
 
     pusherService.on(handleMessage);
@@ -21,6 +22,7 @@
 
     //Implementation ---
     function isAvailable(){
+      console.log(vm.price);
       return (vm.price !== void 0);
     }
 

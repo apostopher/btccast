@@ -19,3 +19,10 @@ body {
   color: #e24b02;
   font-size: 50px;
 }
+
+.message {
+  font-weight: 300;
+  text-align: center;
+  color: #e24b02;
+  font-size: 30px;
+}
