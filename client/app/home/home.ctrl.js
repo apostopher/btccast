@@ -13,6 +13,8 @@
   /* @ngInject */
   function HomeCtrl($scope, pusherService) {
     var vm = this;
+    vm.price = 'loading price...';
+    
     pusherService.on(handleMessage);
 
     return vm;
