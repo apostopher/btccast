@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 var compress = require('compression');
 var cons = require('consolidate');
+var request = require('request');
 
 var config = require('./config/config');
 
@@ -28,10 +29,17 @@ app.set('views', __dirname + '/../client');
 
 app.get('/', function(req, res){
   'use strict';
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
   res.render('index');
+});
+
+app.get('/lastprice', function(req, res){
+  'use strict';
+  request.get('https://www.bitstamp.net/api/ticker/', function(error, response, body){
+    if(error){
+      res.status(404).send('Sorry, can not find last price.');
+    }
+    res.send(+body.last);
+  });
 });
 
 var server = app.listen((config.port || 3000), onStart);

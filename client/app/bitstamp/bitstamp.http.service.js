@@ -6,7 +6,7 @@
   'use strict';
   angular
     .module('btcapp.bitstamp')
-    .constant('BITSTAMP_HTTP_API', 'https://www.bitstamp.net/api/ticker/')
+    .constant('BITSTAMP_HTTP_API', 'cast.apostopher.com/getprice')
     .factory('httpService', httpService);
 
   httpService.$inject = ['$http', 'BITSTAMP_HTTP_API'];
@@ -15,8 +15,7 @@
   function httpService($http, BITSTAMP_HTTP_API) {
     var config = {
       method: 'GET',
-      url: BITSTAMP_HTTP_API,
-      responseType: 'json'
+      url: BITSTAMP_HTTP_API
     };
     return {
       getLastPrice: getLastPrice
@@ -25,7 +24,7 @@
     //Implementation ---
     function getLastPrice(callback){
       $http(config).success(function(data){
-        callback(null, +data.last);
+        callback(null, +data);
       }).error(function(){
         callback(new Error('unable to get price'));
       });
