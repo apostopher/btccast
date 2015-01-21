@@ -6,7 +6,7 @@
   'use strict';
   angular
     .module('btcapp.bitstamp')
-    .constant('BITSTAMP_HTTP_API', 'cast.apostopher.com/getprice')
+    .constant('BITSTAMP_HTTP_API', 'cast.apostopher.com/lastprice')
     .factory('httpService', httpService);
 
   httpService.$inject = ['$http', 'BITSTAMP_HTTP_API'];
