@@ -35,8 +35,9 @@ app.get('/', function(req, res){
 app.get('/lastprice', function(req, res){
   'use strict';
   request.get('https://www.bitstamp.net/api/ticker/', function(error, response, body){
+    console.log(body);
     if(error){
-      res.status(404).send('Sorry, can not find last price.');
+      res.status(404).send(error);
     }
     res.send(+body.last);
   });
