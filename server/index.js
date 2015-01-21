@@ -28,7 +28,7 @@ app.set('views', __dirname + '/../client');
 
 app.get('/', function(req, res){
   'use strict';
-  res.header('Access-Control-Allow-Origin', 'https://www.bitstamp.net');
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   res.render('index');
