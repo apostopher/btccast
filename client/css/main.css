@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-attachment: fixed;
 }
 
 .price-holder {
@@ -23,6 +24,8 @@ body {
   text-align: center;
   color: #e24b02;
   font-size: 50px;
+  margin:0;
+  padding:0;
 }
 
 .btc-footer {
