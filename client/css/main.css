@@ -1,6 +1,10 @@
 body {
   font-family: "proxima-nova-soft";
   background: black;
+  background-image: url('../img/bitcoinnetwork.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .price-holder {
