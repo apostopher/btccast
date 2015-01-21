@@ -35,11 +35,18 @@ app.get('/', function(req, res){
 app.get('/lastprice', function(req, res){
   'use strict';
   request.get('https://www.bitstamp.net/api/ticker/', function(error, response, body){
-    console.log(body.last);
+    var data;
     if(error){
       res.status(404).send(error);
     }
-    res.send(+body.last);
+
+    try{
+      data = JSON.parse(body);
+    }catch(error){
+      res.status(404).send(error);
+    }
+
+    res.send(+data.last);
   });
 });
 
