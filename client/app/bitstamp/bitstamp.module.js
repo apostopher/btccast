@@ -5,5 +5,5 @@
 (function () {
   'use strict';
   angular
-    .module('btcapp.pusher', []);
+    .module('btcapp.bitstamp', []);
 }());

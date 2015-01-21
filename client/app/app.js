@@ -10,6 +10,6 @@
       'btcapp.common',
       'btcapp.home',
       'btcapp.receiver',
-      'btcapp.pusher'
+      'btcapp.bitstamp'
     ]);
 }());

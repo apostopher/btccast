@@ -8,10 +8,10 @@
     .module('btcapp.home')
     .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject = ['$scope', 'pusherService', 'receiverService'];
+  HomeCtrl.$inject = ['$scope', 'pusherService', 'receiverService', 'httpService'];
 
   /* @ngInject */
-  function HomeCtrl($scope, pusherService, receiverService) {
+  function HomeCtrl($scope, pusherService, receiverService, httpService) {
     var vm = this;
     vm.price = void 0;
 
@@ -19,9 +19,16 @@
     receiverService.on(handleSenderMessage);
     receiverService.start();
 
+    httpService.getLastPrice(httpHandler);
     return vm;
 
     //Implementation ---
+    function httpHandler(error, price){
+      if(!error){
+        vm.price = price;
+      }
+    }
+
     function handleSenderMessage(message){
       if (vm.senderMessage === message){
         return;

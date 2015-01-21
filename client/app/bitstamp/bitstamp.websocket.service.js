@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   angular
-    .module('btcapp.pusher')
+    .module('btcapp.bitstamp')
     .constant('PUSHER_KEY', 'de504dc5763aeef9ff52')
     .constant('CHANNEL', 'live_trades')
     .factory('pusherService', pusherService);
